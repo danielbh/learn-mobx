@@ -14,23 +14,23 @@ class App extends Component {
         const { group } = this.props
         const selectedUser = group.users.get(this.state.selectedUser)
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">WishList</h1>
-                </header>
-                <button onClick={group.reload}>Reload</button>
-                <select onChange={this.onSelectUser}>
-                    <option>- Select user -</option>
-                    {group.users.values().map(user => (
-                        <option key={user.id} value={user.id}>
-                            {user.name}
-                        </option>
-                    ))}
-                </select>
-                <button onClick={group.drawLots}>Draw lots</button>
-                {selectedUser && <User user={selectedUser} />}
-            </div>
+          <div className="App">
+              <header className="App-header">
+                  <img src={logo} className="App-logo" alt="logo" />
+                  <h1 className="App-title">WishList</h1>
+              </header>
+              <button onClick={group.reload}>Reload</button>
+              <select onChange={this.onSelectUser}>
+                  <option>- Select user -</option>
+                  {group.users.values().map(user => (
+                      <option key={user.id} value={user.id}>
+                          {user.name}
+                      </option>
+                  ))}
+              </select>
+              <button onClick={group.drawLots}>Draw lots</button>
+              {selectedUser && <User user={selectedUser} />}
+          </div>
         )
     }
 
